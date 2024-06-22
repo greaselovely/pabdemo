@@ -41,7 +41,9 @@ def main():
 
     Raises:
     SystemExit: If there's an error in configuration or API request.
+    
     """
+    clear()
     try:
         config = initialize_config()
         api_key = config["api_key"]
@@ -79,5 +81,4 @@ def main():
         sys.exit(1)
 
 if __name__ == "__main__":
-    clear()
     main()

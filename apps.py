@@ -87,6 +87,36 @@ def print_random_apps(apps, num_apps=3, url_limit=5):
         print("\n")
 
 def main():
+    """
+    Main function to retrieve and display random application information.
+
+    This function performs the following steps:
+    1. Clears the terminal screen.
+    2. Initializes and loads the configuration.
+    3. Retrieves application data from either the API or a local file.
+    4. Prints information about randomly selected applications.
+
+    The function uses the following configuration values:
+    - api_key: The API key for authentication.
+    - api_url: The base URL for the API, to which "v1/applications" is appended.
+
+    It also uses a local file named "applications.json" to store or retrieve
+    application data.
+
+    If any error occurs during the process, it catches the exception and
+    prints a notice with the error message.
+
+    Note:
+    This function depends on the following imported functions:
+    - clear(): To clear the terminal screen.
+    - initialize_config(): To load and validate the configuration.
+    - retrieve_applications(): To fetch application data.
+    - print_random_apps(): To display information about random applications.
+    - print_notice(): To print formatted notice messages.
+
+    Raises:
+    SystemExit: If there's an error in configuration initialization.
+    """
     clear()
     config = initialize_config()
     api_key = config.get("api_key", "")
